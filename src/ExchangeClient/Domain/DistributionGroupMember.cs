@@ -8,6 +8,8 @@ namespace Exchange.Client.Domain
 {
     public class DistributionGroupMember
     {
+        public string Identity { get; set; }
+
         public string FirstName { get; set; }
 
         public string LastName { get; set; }
@@ -22,5 +24,6 @@ namespace Exchange.Client.Domain
         {
             return DisplayName;
         }
+        
     }
 }
