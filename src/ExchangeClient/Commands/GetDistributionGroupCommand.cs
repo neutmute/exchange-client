@@ -37,5 +37,6 @@ namespace Exchange.Client.Commands
     {
         public DistributionGroup DistributionGroup { get; set; }
 
+        public bool HasDistributionGroup => DistributionGroup != null;
     }
 }

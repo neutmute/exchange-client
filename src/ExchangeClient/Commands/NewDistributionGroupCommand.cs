@@ -11,6 +11,9 @@ using Exchange.Client.Repository;
 
 namespace Exchange.Client.Commands
 {
+    /// <summary>
+    /// https://technet.microsoft.com/en-us/library/aa998856%28v=exchg.150%29.aspx
+    /// </summary>
     class NewDistributionGroupCommand : PowerShellCommandWithResult<NewDistributionGroupResponse>
     {
         public DistributionGroup DistributionGroup { get; set; }
