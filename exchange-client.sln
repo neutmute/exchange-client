@@ -3,7 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExchangeClient", "ExchangeClient\ExchangeClient.csproj", "{6C7E1104-E41C-4A3B-AB44-6F81D8891C39}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{F2DA42E2-63BE-4853-BD17-937C5E8C15E2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Properties", "Properties", "{308AF812-FD03-47F4-8DE2-E70163B01CB0}"
+	ProjectSection(SolutionItems) = preProject
+		SolutionItems\Properties\AssemblyInfoGlobal.cs = SolutionItems\Properties\AssemblyInfoGlobal.cs
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExchangeClient", "src\ExchangeClient\ExchangeClient.csproj", "{6C7E1104-E41C-4A3B-AB44-6F81D8891C39}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +25,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{308AF812-FD03-47F4-8DE2-E70163B01CB0} = {F2DA42E2-63BE-4853-BD17-937C5E8C15E2}
 	EndGlobalSection
 EndGlobal
