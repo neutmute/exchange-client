@@ -22,7 +22,7 @@ namespace Exchange.Client.Repository
             foreach (var outputProperty in properties)
             {
                 var inputProp = input.Properties[outputProperty.Name];
-                if (inputProp.IsGettable)
+                if (inputProp !=null && inputProp.IsGettable)
                 {
                     if (outputProperty.CanWrite)
                     {

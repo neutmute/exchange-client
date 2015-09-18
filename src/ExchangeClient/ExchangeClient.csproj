@@ -56,6 +56,7 @@
     <Compile Include="Commands\Core\PowerShellCommandWithResult.cs" />
     <Compile Include="Domain\DistributionGroupMember.cs" />
     <Compile Include="Domain\DistributionGroup.cs" />
+    <Compile Include="Extensions\PowershellExtensions.cs" />
     <Compile Include="Repository\ExecutionResult.cs" />
     <Compile Include="Domain\PowershellError.cs" />
     <Compile Include="ExchangeClient.cs" />

@@ -27,7 +27,6 @@ namespace Exchange.Client
 
         public GetDistributionGroupMemberResponse GetDistributionGroupMember(string name)
         {
-
             var command = new GetDistributionGroupMemberCommand();
             command.Identity = name;
 
@@ -48,10 +47,10 @@ namespace Exchange.Client
             return results;
         }
 
-        public CommandResponse NewDistributionGroup(string name)
+        public CommandResponse NewDistributionGroup(DistributionGroup group)
         {
             var command = new NewDistributionGroupCommand();
-            command.Name = name;
+            command.DistributionGroup = group;
 
             var rawResult = _repository.Execute(command);
 

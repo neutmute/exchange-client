@@ -13,13 +13,27 @@ namespace Exchange.Client.Commands
 {
     class NewDistributionGroupCommand : PowerShellCommandWithResult<CommandResponse>
     {
-        public string Name { get; set; }
+        public DistributionGroup DistributionGroup { get; set; }
 
         protected override string CommandName => "New-DistributionGroup";
         
         protected override List<CommandParameter> GetParameters()
         {
-            return new List<CommandParameter> { new CommandParameter("Name", Name) };
+            var parameters = new List<CommandParameter>();
+            parameters.Add("Name", DistributionGroup.Name);
+            parameters.Add("DisplayName", DistributionGroup.DisplayName);
+            parameters.Add("Alias", DistributionGroup.Alias);
+            parameters.Add("Notes", DistributionGroup.Notes);
+            parameters.Add("OrganizationalUnit", DistributionGroup.OrganizationalUnit);
+            return parameters;
+        }
+
+        protected override void DoPopulateResponse(CommandResponse response, ExecutionResult executionResult)
+        {
+            foreach (var result in executionResult.Results)
+            {
+
+            }
         }
     }
     

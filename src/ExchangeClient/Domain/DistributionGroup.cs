@@ -9,9 +9,12 @@ namespace Exchange.Client.Domain
     public class DistributionGroup
     {
         public string Name { get; set; }
+        public string Alias { get; set; }
+        public string Notes { get; set; }
 
         public string DisplayName { get; set; }
-
+        public string OrganizationalUnit { get; set; }
+        
         public string PrimarySmtpAddress { get; set; }
 
         public override string ToString()
