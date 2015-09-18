@@ -11,7 +11,7 @@ using Exchange.Client.Repository;
 
 namespace Exchange.Client.Commands
 {
-    class NewDistributionGroupCommand : PowerShellCommandWithResult<CommandResponse>
+    class NewDistributionGroupCommand : PowerShellCommandWithResult<NewDistributionGroupResponse>
     {
         public DistributionGroup DistributionGroup { get; set; }
 
@@ -19,22 +19,29 @@ namespace Exchange.Client.Commands
         
         protected override List<CommandParameter> GetParameters()
         {
-            var parameters = new List<CommandParameter>();
-            parameters.Add("Name", DistributionGroup.Name);
-            parameters.Add("DisplayName", DistributionGroup.DisplayName);
-            parameters.Add("Alias", DistributionGroup.Alias);
-            parameters.Add("Notes", DistributionGroup.Notes);
-            parameters.Add("OrganizationalUnit", DistributionGroup.OrganizationalUnit);
+            var parameters = new List<CommandParameter>
+            {
+                {"Name",        DistributionGroup.Name},
+                {"DisplayName", DistributionGroup.DisplayName},
+                {"Alias",       DistributionGroup.Alias},
+                {"Notes",       DistributionGroup.Notes},
+                {"OrganizationalUnit", DistributionGroup.OrganizationalUnit}
+            };
             return parameters;
         }
 
-        protected override void DoPopulateResponse(CommandResponse response, ExecutionResult executionResult)
+        protected override void DoPopulateResponse(NewDistributionGroupResponse response, ExecutionResult executionResult)
         {
             foreach (var result in executionResult.Results)
             {
-
+                var group = PropertyMapper.Map<DistributionGroup>(result);
+                response.DistributionGroup = group;
             }
         }
+
     }
-    
+
+    public class NewDistributionGroupResponse : GetDistributionGroupResponse
+    {
+    }
 }

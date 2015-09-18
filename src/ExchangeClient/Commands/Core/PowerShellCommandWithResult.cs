@@ -13,7 +13,6 @@ namespace Exchange.Client.Commands
 
         protected virtual void DoPopulateResponse(TResponse response, ExecutionResult result)
         {
-            
         }
     }
 }

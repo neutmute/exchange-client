@@ -25,6 +25,11 @@ namespace Exchange.Client.Commands
             parameters.Add("Member", Member);
             return parameters;
         }
+
+        protected override void DoPopulateResponse(CommandResponse response, ExecutionResult executionResult)
+        {
+         
+        }
     }
     
 }

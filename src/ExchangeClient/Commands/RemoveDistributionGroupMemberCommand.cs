@@ -14,6 +14,13 @@ namespace Exchange.Client.Commands
     class RemoveDistributionGroupMemberCommand : AddDistributionGroupMemberCommand
     {
         protected override string CommandName => "Remove-DistributionGroupMember";
+
+        protected override List<CommandParameter> GetParameters()
+        {
+            var parameters = base.GetParameters();
+            parameters.Add("Confirm", false);
+            return parameters;
+        }
     }
     
 }

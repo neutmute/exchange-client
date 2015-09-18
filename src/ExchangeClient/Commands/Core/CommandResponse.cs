@@ -5,7 +5,9 @@ namespace Exchange.Client
 {
     public class CommandResponse
     {
-        public List<PowershellError> Errors { get; private set; }
+        public List<PowershellError> Errors { get; }
+
+        public bool HasErrors => Errors.Count > 0;
 
         public CommandResponse()
         {
