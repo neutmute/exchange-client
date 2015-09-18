@@ -48,7 +48,9 @@
     <Compile Include="..\..\SolutionItems\Properties\AssemblyInfoGlobal.cs">
       <Link>Properties\AssemblyInfoGlobal.cs</Link>
     </Compile>
+    <Compile Include="Commands\RemoveDistributionGroupMemberCommand.cs" />
     <Compile Include="Commands\Core\CommandResponse.cs" />
+    <Compile Include="Commands\AddDistributionGroupMemberCommand.cs" />
     <Compile Include="Commands\GetDistributionGroupMemberCommand.cs" />
     <Compile Include="Commands\NewDistributionGroupCommand.cs" />
     <Compile Include="Commands\GetDistributionGroupCommand.cs" />
@@ -57,6 +59,7 @@
     <Compile Include="Domain\DistributionGroupMember.cs" />
     <Compile Include="Domain\DistributionGroup.cs" />
     <Compile Include="Extensions\PowershellExtensions.cs" />
+    <Compile Include="IExchangeClient.cs" />
     <Compile Include="Repository\ExecutionResult.cs" />
     <Compile Include="Domain\PowershellError.cs" />
     <Compile Include="ExchangeClient.cs" />

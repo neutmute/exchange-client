@@ -13,16 +13,37 @@ using Exchange.Client.Repository;
 
 namespace Exchange.Client
 {
-    /// <summary>
-    /// http://stackoverflow.com/questions/1469791/powershell-v2-remoting-how-do-you-enable-unencrypted-traffic
-    /// </summary>
-    public class ExchangeClient
+    public class ExchangeClient : IExchangeClient
     {
         private readonly ExchangeRepository _repository;
 
         public ExchangeClient(ConnectionConfiguration configuration)
         {
             _repository = new ExchangeRepository(configuration);
+        }
+
+        public CommandResponse RemoveDistributionGroupMember(string identity, string member)
+        {
+            var command = new RemoveDistributionGroupMemberCommand();
+            command.Identity = identity;
+            command.Member = member;
+
+            var rawResult = _repository.Execute(command);
+
+            var results = command.ProcessResult(rawResult);
+            return results;
+        }
+
+        public CommandResponse AddDistributionGroupMember(string identity, string member)
+        {
+            var command = new AddDistributionGroupMemberCommand();
+            command.Identity = identity;
+            command.Member = member;
+
+            var rawResult = _repository.Execute(command);
+
+            var results = command.ProcessResult(rawResult);
+            return results;
         }
 
         public GetDistributionGroupMemberResponse GetDistributionGroupMember(string name)
