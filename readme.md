@@ -18,7 +18,7 @@ Example usage
         private void ExampleUsage()
         {
             var client = new ExchangeClient(GetConfig());
-            var output = client.GetDistributionGroup(dlEposUsers);
+            var output = client.GetDistributionGroup("MyDistributionGroupName");
         }
 
 
